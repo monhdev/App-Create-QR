@@ -1,20 +1,58 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="secondary">
     <ion-title>
-      Blank
+      Creador y lector de QR
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+  <!--segements-->
+  <ion-segment [(ngModel)]="segment" mode="ios">
+    <ion-segment-button value="scan">
+      <!--lo que aparece en value es lo que se guarda en la variable segment-->
+      <ion-label>Lector de QR</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="generate">
+      <ion-label>Generador de QR</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+  <!--{{ segment }}-->
+
+  <!--scan QR-->
+  @if(segment === 'scan') {
+    <div>
+      <!--esto solo se mostrará si segement es igual a scan-->
+      <p>HAS TOCADO SCAN</p>
+    </div>
+  }
+
+  <!--generate QR-->
+  @if(segment === 'generate') {
+    <div class="segment-content">
+      <!--esto solo se mostrará si segement es igual a generate-->
+      <div id="qrImage">
+        <div class="d-flex-center">
+
+          <qr-code [value]="qrText"
+          size="300"
+          errorCorrectionLevel="M" />
+          <!--al poner value entre corchetes [] podemos poner variables de TypeScript-->
+          <!--sino simplemente pondríamos value, sin corchetes y un texto entre comillas-->
+        </div>
+        <p>{{ qrText }}</p>
+        <ion-textarea
+        label="escribe algo para poner en el QR"
+        labelPlacement="stacked"
+        fill="outline"
+        [(ngModel)]="qrText">
+      </ion-textarea>
+      </div>
+    </div>
+  }
 </ion-content>
