@@ -65,7 +65,7 @@
 
         <!--compartir QR-->
         @if (qrText) {
-        <ion-button class="submit ion-margin-top" expand="block">
+        <ion-button (click)="captureScreen()" class="submit ion-margin-top" expand="block">
           Share
           <ion-icon slot="end" name="share-social-outline"></ion-icon>
         </ion-button>
