@@ -53,12 +53,12 @@ ion-segment{
  .qr-wrapper{
    width: 230px;
    min-height: 230px;
-   background: var(--ion-color-tertiary);
    border-radius: 20px;
+   border: 1px solid var(--ion-color-medium);
  }
 
  .qr-placeholder{
-   width: 60px;
+   width: 250px;
  }
 
  .d-flex-center{
