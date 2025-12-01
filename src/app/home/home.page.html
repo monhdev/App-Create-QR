@@ -1,22 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title>
-      Creador y lector de QR
+      CREA TU CÓDIGO QR
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <!--generate QR-->
-
-  <div class="segment-content">
-    <!--esto solo se mostrará si segement es igual a generate-->
+  <!--generar QR-->
+  <div >
     <div id="qrImage">
-      <div class="d-flex-center"><!--con estos if y else le pongo la imagen de muestra si no hay texto y sino la quito-->
+      <div class="d-flex-center">
         @if (qrText) {
         <div class="d-flex-center qr-wrapper">
           <qr-code [value]="qrText"
-          size="190"
+          size="210"
           errorCorrectionLevel="M" />
         </div>
         }
@@ -26,10 +24,7 @@
           </div>
         }
         </div>
-        <!--al poner value entre corchetes [] podemos poner variables de TypeScript-->
-        <!--sino simplemente pondríamos value, sin corchetes y un texto entre comillas-->
     </div>
-      <p>{{ qrText }}</p>
       <ion-textarea
       label="escribe algo para poner en el QR"
       labelPlacement="stacked"
@@ -46,7 +41,5 @@
         <ion-icon slot="end" name="share-social-outline"></ion-icon>
       </ion-button>
       }
-
   </div>
-
 </ion-content>

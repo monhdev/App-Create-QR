@@ -2,6 +2,11 @@ ion-segment{
   margin-top: 20px;
  }
 
+ ion-title{
+   text-align: center;
+   font-weight: bold;
+ }
+
  .segment{
    padding: 30px 5px;
  }
@@ -54,7 +59,7 @@ ion-segment{
    width: 230px;
    min-height: 230px;
    border-radius: 20px;
-   border: 1px solid var(--ion-color-medium);
+   border: 1px dashed var(--ion-color-medium);
  }
 
  .qr-placeholder{
