@@ -7,72 +7,47 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-
-  <!--segements-->
-  <ion-segment [(ngModel)]="segment" mode="ios">
-    <ion-segment-button value="scan">
-      <!--lo que aparece en value es lo que se guarda en la variable segment-->
-      <ion-label>Lector de QR</ion-label>
-    </ion-segment-button>
-
-    <ion-segment-button value="generate">
-      <ion-label>Generador de QR</ion-label>
-    </ion-segment-button>
-
-  </ion-segment>
-
-  <!--{{ segment }}-->
-
-  <!--scan QR-->
-  @if(segment === 'scan') {
-    <div>
-      <!--esto solo se mostrará si segement es igual a scan-->
-      <p>HAS TOCADO SCAN</p>
-    </div>
-  }
-
   <!--generate QR-->
-  @if(segment === 'generate') {
-    <div class="segment-content">
-      <!--esto solo se mostrará si segement es igual a generate-->
-      <div id="qrImage">
-        <div class="d-flex-center"><!--con estos if y else le pongo la imagen de muestra si no hay texto y sino la quito-->
-          @if (qrText) {
-          <div class="d-flex-center qr-wrapper">
-            <qr-code [value]="qrText"
-            size="190"
-            errorCorrectionLevel="M" />
-          </div>
-          }
-          @else {
-            <div class="d-flex-center qr-wrapper">
-              <img class="qr-placeholder" src="assets/images/qr.webp"/>
-            </div>
-          }
-          </div>
-          <!--al poner value entre corchetes [] podemos poner variables de TypeScript-->
-          <!--sino simplemente pondríamos value, sin corchetes y un texto entre comillas-->
-      </div>
-        <p>{{ qrText }}</p>
-        <ion-textarea
-        label="escribe algo para poner en el QR"
-        labelPlacement="stacked"
-        fill="outline"
-        [(ngModel)]="qrText"
-        rows="4"
-        [autoGrow]="true">
-        </ion-textarea>
 
-        <!--compartir QR-->
+  <div class="segment-content">
+    <!--esto solo se mostrará si segement es igual a generate-->
+    <div id="qrImage">
+      <div class="d-flex-center"><!--con estos if y else le pongo la imagen de muestra si no hay texto y sino la quito-->
         @if (qrText) {
-        <ion-button (click)="captureScreen()" class="submit ion-margin-top" expand="block">
-          Share
-          <ion-icon slot="end" name="share-social-outline"></ion-icon>
-        </ion-button>
+        <div class="d-flex-center qr-wrapper">
+          <qr-code [value]="qrText"
+          size="190"
+          errorCorrectionLevel="M" />
+        </div>
         }
-
+        @else {
+          <div class="d-flex-center qr-wrapper">
+            <img class="qr-placeholder" src="assets/images/qr.webp"/>
+          </div>
+        }
+        </div>
+        <!--al poner value entre corchetes [] podemos poner variables de TypeScript-->
+        <!--sino simplemente pondríamos value, sin corchetes y un texto entre comillas-->
     </div>
+      <p>{{ qrText }}</p>
+      <ion-textarea
+      label="escribe algo para poner en el QR"
+      labelPlacement="stacked"
+      fill="outline"
+      [(ngModel)]="qrText"
+      rows="4"
+      [autoGrow]="true">
+      </ion-textarea>
 
-  }
-  <h1> voy por el minuto 22.08 del video</h1>
+      <!--compartir QR-->
+      @if (qrText) {
+      <ion-button (click)="captureScreen()" class="submit ion-margin-top" expand="block">
+        Share
+        <ion-icon slot="end" name="share-social-outline"></ion-icon>
+      </ion-button>
+      }
+
+  </div>
+
+
 </ion-content>
