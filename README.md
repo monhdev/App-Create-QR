@@ -33,21 +33,26 @@ html2canvas genera un canvas a partir de ese elemento.
 Se comprueba Capacitor.isNativePlatform() para elegir la estrategia.
 La lógica está contenida en un solo método, lo que simplifica pruebas y mantenimiento.
 
-Con downloadImage en navegadores se usa un enlace temporal para descargar el PNG del QR.
+<img width="709" height="354" alt="image" src="https://github.com/user-attachments/assets/f4a70f9d-dcac-458e-8a71-89b4343206af" />
 
+Con downloadImage en navegadores se usa un enlace temporal para descargar el PNG del QR.
 Se crea un elemento <a> dinámicamente.
 canvas.toDataURL() produce el PNG base64.
 link.click() dispara la descarga del archivo.
 No requiere APIs nativas y funciona en cualquier navegador moderno
 
-En el caso de shareImage en dispositivos nativos se guarda el archivo en caché y se invoca el cuadro de compartir del sistema.
+<img width="448" height="152" alt="image" src="https://github.com/user-attachments/assets/bd316059-5159-4903-adc5-05eca68e5f8b" />
 
+En el caso de shareImage en dispositivos nativos se guarda el archivo en caché y se invoca el cuadro de compartir del sistema.
 Se elimina el prefijo data: del base64 antes de escribirlo.
 Filesystem.writeFile guarda el archivo en el directorio de caché.
 Share.share muestra el diálogo nativo con la ruta del archivo.
 Filesystem.deleteFile limpia el archivo temporal.
 El flujo respeta las guías de Capacitor para compartir archivos y mantiene limpio el almacenamiento.
 
+<img width="768" height="761" alt="image" src="https://github.com/user-attachments/assets/430630db-aa0f-4bec-8cbd-802f469b4359" />
+
+Ahora toca la parte de html.
 
 
 Para Android: npx cap add android.
@@ -60,5 +65,6 @@ Abre los proyectos nativos:
 Para Android: npx cap open android
 Para iOS: npx cap open ios
 Ejecuta desde Android Studio/Xcode: Abre el proyecto nativo generado (Android Studio o Xcode) y compila y ejecuta tu aplicación en un emulador o dispositivo físico. 
+
 
 
