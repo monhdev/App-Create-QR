@@ -22,9 +22,31 @@ loadingController: muestra un indicador de progreso durante operaciones asíncro
 platform: identifica si el código corre en un dispositivo nativo o en el navegador.
 addIcons: registra los iconos de Ionic para que <ion-icon> los reconozca.
 
+<img width="584" height="135" alt="image" src="https://github.com/user-attachments/assets/4554d593-d959-45ce-8449-de13b22b9e41" />
 
+qrText almacena el contenido que se convertirá en código QR y se enlaza con [(ngModel)].
+<img width="214" height="31" alt="image" src="https://github.com/user-attachments/assets/87443aa3-ba0c-4eaa-8edc-2b6d103ec5e4" />
 
+El método captureScreen convierte el SVG del QR en un canvas y decide la ruta de salida según la plataforma:
+document.getElementById('qrImage') obtiene el contenedor del QR.
+html2canvas genera un canvas a partir de ese elemento.
+Se comprueba Capacitor.isNativePlatform() para elegir la estrategia.
+La lógica está contenida en un solo método, lo que simplifica pruebas y mantenimiento.
 
+Con downloadImage en navegadores se usa un enlace temporal para descargar el PNG del QR.
+
+Se crea un elemento <a> dinámicamente.
+canvas.toDataURL() produce el PNG base64.
+link.click() dispara la descarga del archivo.
+No requiere APIs nativas y funciona en cualquier navegador moderno
+
+En el caso de shareImage en dispositivos nativos se guarda el archivo en caché y se invoca el cuadro de compartir del sistema.
+
+Se elimina el prefijo data: del base64 antes de escribirlo.
+Filesystem.writeFile guarda el archivo en el directorio de caché.
+Share.share muestra el diálogo nativo con la ruta del archivo.
+Filesystem.deleteFile limpia el archivo temporal.
+El flujo respeta las guías de Capacitor para compartir archivos y mantiene limpio el almacenamiento.
 
 
 
@@ -38,4 +60,5 @@ Abre los proyectos nativos:
 Para Android: npx cap open android
 Para iOS: npx cap open ios
 Ejecuta desde Android Studio/Xcode: Abre el proyecto nativo generado (Android Studio o Xcode) y compila y ejecuta tu aplicación en un emulador o dispositivo físico. 
+
 
