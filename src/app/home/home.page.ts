@@ -3,7 +3,7 @@ import { IonHeader, IonToolbar, IonTitle, IonContent,  IonTextarea, IonButton, I
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { QrCodeComponent } from 'ng-qrcode';
-import { shareSocialOutline } from 'ionicons/icons';
+import { shareSocialOutline, qrCodeOutline, qrCodeSharp } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import html2canvas from 'html2canvas';
 import { Filesystem, Directory } from "@capacitor/filesystem";
@@ -25,7 +25,7 @@ export class HomePage {
     private loadingController: LoadingController,
     private platform: Platform
   ) {
-    addIcons({ shareSocialOutline });
+    addIcons({qrCodeOutline,qrCodeSharp,shareSocialOutline});
   }
 
 

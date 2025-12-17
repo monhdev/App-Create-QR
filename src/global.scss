@@ -35,3 +35,28 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+:root {
+  --ion-background-color: hsl(41, 80%, 90%);
+	--ion-background-color-rgb: 255,255,255;
+
+	--ion-background-color-step-50: #f3d826;
+	--ion-background-color-step-100: #f4da32;
+	--ion-background-color-step-150: #f4dc3d;
+	--ion-background-color-step-200: #f5de48;
+	--ion-background-color-step-250: #f5e053;
+	--ion-background-color-step-300: #f6e15f;
+	--ion-background-color-step-350: #f6e36a;
+	--ion-background-color-step-400: #f7e575;
+	--ion-background-color-step-450: #f7e780;
+	--ion-background-color-step-500: #f8e98c;
+	--ion-background-color-step-550: #f8eb97;
+	--ion-background-color-step-600: #f8eda2;
+	--ion-background-color-step-650: #f9efad;
+	--ion-background-color-step-700: #f9f1b8;
+	--ion-background-color-step-750: #faf3c4;
+	--ion-background-color-step-800: #faf4cf;
+	--ion-background-color-step-850: #fbf6da;
+	--ion-background-color-step-900: #fbf8e6;
+	--ion-background-color-step-950: #fcfaf1;
+}

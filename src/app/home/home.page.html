@@ -1,14 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title>
+      <ion-icon name="qr-code-sharp"></ion-icon>
       CREA TU CÓDIGO QR
+      <ion-icon name="qr-code-sharp"></ion-icon>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <!--generar QR-->
-  <div >
+  <div>
     <div id="qrImage">
       <div class="d-flex-center">
         @if (qrText) {
@@ -26,7 +28,7 @@
         </div>
     </div>
       <ion-textarea
-      label="escribe algo para poner en el QR"
+      label="¿Qué quieres compartir en tu QR?"
       labelPlacement="stacked"
       fill="outline"
       [(ngModel)]="qrText"
@@ -36,8 +38,8 @@
 
       <!--compartir QR-->
       @if (qrText) {
-      <ion-button (click)="captureScreen()" class="submit ion-margin-top" expand="block">
-        Share
+      <ion-button (click)="captureScreen()" class="submit ion-margin-top " expand="block" color="tertiary">
+        Compartir QR
         <ion-icon slot="end" name="share-social-outline"></ion-icon>
       </ion-button>
       }

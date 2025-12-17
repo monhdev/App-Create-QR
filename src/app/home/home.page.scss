@@ -1,14 +1,6 @@
-ion-segment{
-  margin-top: 20px;
- }
-
- ion-title{
+ion-title{
    text-align: center;
    font-weight: bold;
- }
-
- .segment{
-   padding: 30px 5px;
  }
 
  .submit{
@@ -43,7 +35,9 @@ ion-segment{
  }
 
  ion-button{
-   text-transform: none;
+  text-transform: none;
+  font-weight: bold;
+  padding: 0 25% 0 25%;
  }
 
  ion-textarea{
