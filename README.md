@@ -16,6 +16,12 @@ Ejecutamos npx cap init. Esto creará el archivo capacitor.config.ts y configura
 En home.ts preparamos todos los imports:
 <img width="1198" height="317" alt="image" src="https://github.com/user-attachments/assets/86baa0a3-0387-4d53-8aed-55cbfdfd22d5" />
 
+En el constructor se preparan las herramientas que se usarán más adelante para carga y detección de plataforma.
+
+loadingController: muestra un indicador de progreso durante operaciones asíncronas.
+platform: identifica si el código corre en un dispositivo nativo o en el navegador.
+addIcons: registra los iconos de Ionic para que <ion-icon> los reconozca.
+
 
 
 
@@ -32,3 +38,4 @@ Abre los proyectos nativos:
 Para Android: npx cap open android
 Para iOS: npx cap open ios
 Ejecuta desde Android Studio/Xcode: Abre el proyecto nativo generado (Android Studio o Xcode) y compila y ejecuta tu aplicación en un emulador o dispositivo físico. 
+
