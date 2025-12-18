@@ -56,6 +56,27 @@ El flujo respeta las guías de Capacitor para compartir archivos y mantiene limp
 
 Ahora toca la parte de html.
 
+En mi caso he creado un encabezado que utiliza el atributo translucent para crear un efecto de transparencia similar al de iOS.
+<img width="473" height="227" alt="image" src="https://github.com/user-attachments/assets/72612648-ac16-497d-812b-259ccdec388b" />
+
+El ion-content contiene el área principal con espaciado uniforme y el formulario de generación QR.
+<img width="369" height="45" alt="image" src="https://github.com/user-attachments/assets/307804c3-238c-4f73-9fbe-8f3b58c1cc70" />
+
+Usamos la nueva directiva @if, presente desde Angular 17, para mostrar dinámicamente el código QR o un placeholder.
+
+<img width="595" height="263" alt="image" src="https://github.com/user-attachments/assets/da6a5c10-217e-4376-ae5a-5967d66c137e" />
+
+El campo de texto permite ingresar el contenido del QR con crecimiento automático.
+
+<img width="372" height="191" alt="image" src="https://github.com/user-attachments/assets/a8a094c3-e9e8-44e9-92c8-c8de03e00329" />
+
+El botón para compartir aparece solo cuando hay un QR generado.
+
+<img width="806" height="154" alt="image" src="https://github.com/user-attachments/assets/9861d478-dfe1-4a78-a871-297f9a20c182" />
+
+
+
+
 
 Para Android: npx cap add android.
 Para iOS: npx cap add ios. 
@@ -67,6 +88,7 @@ Abre los proyectos nativos:
 Para Android: npx cap open android
 Para iOS: npx cap open ios
 Ejecuta desde Android Studio/Xcode: Abre el proyecto nativo generado (Android Studio o Xcode) y compila y ejecuta tu aplicación en un emulador o dispositivo físico. 
+
 
 
 
