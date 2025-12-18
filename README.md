@@ -15,6 +15,7 @@ Hecho esto entramos en nuestro IDE y ejecutamos ionic start. Marcamos las opcion
 Ejecutamos npx cap init. Esto creará el archivo capacitor.config.ts y configurará todo para Capacitor.
 
 En home.ts preparamos todos los imports:
+
 <img width="1198" height="317" alt="image" src="https://github.com/user-attachments/assets/86baa0a3-0387-4d53-8aed-55cbfdfd22d5" />
 
 En el constructor se preparan las herramientas que se usarán más adelante para carga y detección de plataforma.
@@ -27,6 +28,7 @@ addIcons: registra los iconos de Ionic para que <ion-icon> los reconozca.
 <img width="584" height="135" alt="image" src="https://github.com/user-attachments/assets/4554d593-d959-45ce-8449-de13b22b9e41" />
 
 qrText almacena el contenido que se convertirá en código QR y se enlaza con [(ngModel)].
+
 <img width="214" height="31" alt="image" src="https://github.com/user-attachments/assets/87443aa3-ba0c-4eaa-8edc-2b6d103ec5e4" />
 
 El método captureScreen convierte el SVG del QR en un canvas y decide la ruta de salida según la plataforma:
@@ -57,9 +59,11 @@ El flujo respeta las guías de Capacitor para compartir archivos y mantiene limp
 Ahora toca la parte de html.
 
 En mi caso he creado un encabezado que utiliza el atributo translucent para crear un efecto de transparencia similar al de iOS.
+
 <img width="473" height="227" alt="image" src="https://github.com/user-attachments/assets/72612648-ac16-497d-812b-259ccdec388b" />
 
 El ion-content contiene el área principal con espaciado uniforme y el formulario de generación QR.
+
 <img width="369" height="45" alt="image" src="https://github.com/user-attachments/assets/307804c3-238c-4f73-9fbe-8f3b58c1cc70" />
 
 Usamos la nueva directiva @if, presente desde Angular 17, para mostrar dinámicamente el código QR o un placeholder.
@@ -74,23 +78,27 @@ El botón para compartir aparece solo cuando hay un QR generado.
 
 <img width="806" height="154" alt="image" src="https://github.com/user-attachments/assets/9861d478-dfe1-4a78-a871-297f9a20c182" />
 
+Con el html listo, procedemos a probar nuestra app ejecutando un ionic serve. Si todo funciona correctamente preparamos capacitor para funcionar tanto en terminales iOS como Android.
+
+En la página oficila de Capacitor se nos explica detalladamente como instalar en nuesto proyecto las librerias necesarias tanto para crear el QR, como para almacenar o compartir nuestro archivo creado.
+
+Para el QR iremos a https://capacitorjs.com/docs/apis/barcode-scanner y seguiremos las instrucciones que se nos proporcionan en la documentación, en el caso del almacenamiento iremos a https://capacitorjs.com/docs/apis/filesystem, dejamos las páginas abiertas a la espera de crear las carpetas para Android e iOS donde colocaremos los permisos pertientes en las carpetas que se nos indica en la documentación.
+
+Una vez instaladas las librerias crearemos las carpetas para pasar nuestra app a dispositivos móviles. Dentro de la carpeta del proyecto, ejecutaremos lo siguiente en nuestra terminal: npx cap add android, en el caso de querer crear la app para Android, y npx cap add ios, para iOS. Ahora añadimos los permisos que nos indica en la documentación de las páginas oficiales de Capacitor. 
+
+En mi caso, tras crear la carpeta de android y añadir los permisos, ejecuto npx cap open android y automaticamente se abre Android Studio con mi proyecto listo para trabajar con él.
+
+Una vez en Android Studio seleccionamos un dispositivo virtual para probar la app, 
+
+<img width="715" height="222" alt="image" src="https://github.com/user-attachments/assets/4de0683b-d39d-437e-a40d-968702cdbcab" />
 
 
+También puedes probarla en un dispositivo físico, en la documentación de la web de Android Studio te explica perfectamente como hacerlo https://developer.android.com/studio/run/device?hl=es-419, pero en nuestro caso empezamos por el dispsitivo virtual.
 
+Con el dispositivo virtual listo, hacemos clic sobre el icono en forma de play del menú superior derecho y nuestra app se ejecutará en el dispositivo virtual.
 
-Para Android: npx cap add android.
-Para iOS: npx cap add ios. 
+<img width="401" height="32" alt="image" src="https://github.com/user-attachments/assets/97c761bc-3452-4d9c-be31-520a5d87ab43" />
 
-Construye tu aplicación web: Ejecuta ionic build para generar los archivos web que se copiarán a las carpetas nativas.
-Sincroniza los cambios: Usa npx cap sync para copiar los archivos de tu aplicación web (build) a los proyectos nativos de Android e iOS. 
-4. Ejecuta en dispositivos
-Abre los proyectos nativos:
-Para Android: npx cap open android
-Para iOS: npx cap open ios
-Ejecuta desde Android Studio/Xcode: Abre el proyecto nativo generado (Android Studio o Xcode) y compila y ejecuta tu aplicación en un emulador o dispositivo físico. 
+<img width="317" height="645" alt="image" src="https://github.com/user-attachments/assets/5f528718-b238-47d2-bd2e-f3af829d898c" /><img width="306" height="653" alt="image" src="https://github.com/user-attachments/assets/5dd11883-5b6a-4a1a-a2b2-c5d21157d8d9" /><img width="313" height="652" alt="image" src="https://github.com/user-attachments/assets/c6eac388-4f9d-4e06-8d1c-98a90345824d" />
 
-
-
-
-
-
+Como podemos observar, en principio se nos muestra la pantalla lista para lista para crear nuestro QR, tras escribir nuesto texto el QR se crea automaticamente y por último, pulsando sobre la opción share nos da la opción de compartir como deseemos.
