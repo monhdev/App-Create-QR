@@ -7,6 +7,7 @@ Para crear la aplicación debes tener instalado Node.js en tu equipo. Si no lo t
 Luego instala el CLI de Angular e Ionic globalmente:
 
 npm install -g @angular/cli
+
 npm install -g @ionic/cli
 
 Hecho esto entramos en nuestro IDE y ejecutamos ionic start. Marcamos las opciones según van apareciendo y nombramos nuestro proyecto.
@@ -65,6 +66,7 @@ Abre los proyectos nativos:
 Para Android: npx cap open android
 Para iOS: npx cap open ios
 Ejecuta desde Android Studio/Xcode: Abre el proyecto nativo generado (Android Studio o Xcode) y compila y ejecuta tu aplicación en un emulador o dispositivo físico. 
+
 
 
 
