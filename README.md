@@ -20,7 +20,8 @@ En home.ts preparamos todos los imports:
 En el constructor se preparan las herramientas que se usarán más adelante para carga y detección de plataforma.
 
 loadingController: muestra un indicador de progreso durante operaciones asíncronas.
-platform: identifica si el código corre en un dispositivo nativo o en el navegador.
+
+
 addIcons: registra los iconos de Ionic para que <ion-icon> los reconozca.
 
 <img width="584" height="135" alt="image" src="https://github.com/user-attachments/assets/4554d593-d959-45ce-8449-de13b22b9e41" />
@@ -66,6 +67,7 @@ Abre los proyectos nativos:
 Para Android: npx cap open android
 Para iOS: npx cap open ios
 Ejecuta desde Android Studio/Xcode: Abre el proyecto nativo generado (Android Studio o Xcode) y compila y ejecuta tu aplicación en un emulador o dispositivo físico. 
+
 
 
 
